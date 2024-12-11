@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre los mejores simuladores de amplificadores de guitarra, también conocidos como amp sims. Aprende sobre sus características, beneficios y cómo pueden mejorar tu música.">
+    <title>Simuladores de Amplificadores de Guitarra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+        }
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .carousel button.prev {
+            left: 10px;
+        }
+        .carousel button.next {
+            right: 10px;
+        }
+        .carousel button:focus {
+            outline: 3px solid #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Simuladores de Amplificadores de Guitarra</h1>
+    </header>
+    <main>
+        <section aria-labelledby="intro">
+            <h2 id="intro">¿Qué son los Amp Sims?</h2>
+            <p>Los simuladores de amplificadores de guitarra, o amp sims, son herramientas digitales que reproducen el sonido de amplificadores de guitarra clásicos y modernos. Estos programas permiten a los músicos acceder a una variedad de sonidos sin la necesidad de equipos físicos costosos.</p>
+        </section>
+
+        <section aria-labelledby="carousel" class="carousel">
+            <h2 id="carousel">Galería de Amp Sims Populares</h2>
+            <div class="carousel-images" role="region" aria-label="Galería de imágenes" tabindex="0">
+                <img src="https://images.ctfassets.net/8puu65w27ud0/5p8egsmSN4DNSe70QXdeNz/f073628b3fe1525d45b84b7b8521e0ee/archetype-nolly-x-ui.png" alt="Pantalla de un simulador de amplificador moderno con múltiples controles">
+                <img src="https://www.ikmultimedia.com/products/orangecs/main-banner/mobile.jpg" alt="Interfaz gráfica de un amplificador clásico simulado">
+                <img src="https://www.lootaudio.com/_media/images/loot/bogren-digital/Ampknob%20BDH%2066o6/BDH%2060o6%201Main.jpg" alt="Vista general de un amp sim con opciones de pedales y efectos">
+                <img src="https://masters-of-music.com/wp-content/uploads/2016/03/Amp-Sims-List.jpg" alt="Múltiples amplificadores de varias marcas">
+                <img src="https://cdn.shopify.com/s/files/1/0161/6212/7936/files/5034_free_guitar_plugin_ml_sound_lab_amped_roots_480x480.jpg?v=1655283296" alt="Interfaz gráfica de un amplificador Roots">
+                <img src="https://dt7v1i9vyp3mf.cloudfront.net/styles/news_large/s3/imagelibrary/S/Spotlight_Brainworx-9TDTNSubHfykUyIbJUXWMTmKiKnwv7aN.jpg" alt="Interfaz gráfica de un amplificador brainworx">
+            
+            </div>
+            <button class="prev" aria-label="Imagen anterior">&#10094;</button>
+            <button class="next" aria-label="Imagen siguiente">&#10095;</button>
+        </section>
+
+        <section aria-labelledby="benefits">
+            <h2 id="benefits">Beneficios de los Amp Sims</h2>
+            <ul>
+                <li>Acceso a una variedad de sonidos sin equipos voluminosos.</li>
+                <li>Configuraciones personalizables para adaptarse a cualquier género musical.</li>
+                <li>Compatibilidad con estudios de grabación caseros.</li>
+                <li>Ideal para practicar en silencio usando auriculares.</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const carousel = document.querySelector('.carousel-images');
+        const images = document.querySelectorAll('.carousel img');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let index = 0;
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            index = (index > 0) ? index - 1 : images.length - 1;
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            index = (index < images.length - 1) ? index + 1 : 0;
+            updateCarousel();
+        });
+    </script>
+</body>
+</html>
